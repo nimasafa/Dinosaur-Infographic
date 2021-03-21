@@ -201,9 +201,13 @@ function generateTile(dinoData, humanData) {
         default:
             dinoFact = "Dinosaurs dominated the world!";
     }
-}
-  
+
     // Add tiles to DOM
+    const newTile = document.createElement('div');
+    newTile.className = 'grid-item';
+    newTile.innerHTML = `<h3>${dinoData.species}</h3><img src="images/${(dinoData.species.toLowerCase())}.png" alt="image of ${dinoData.species}"><p>${dinoFact}</p>`;
+    return newTile;
+}
 
 // Remove form from screen
 
