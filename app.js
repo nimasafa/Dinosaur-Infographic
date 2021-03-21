@@ -268,7 +268,7 @@ function displayGraphic(dinoData, humanData) {
 }
 
 // IIFE that displays infographic with comparisons on button click
-(function main(){
+(function main() {
     const button = document.getElementById('btn');
 
     document.addEventListener('DOMContentLoaded', function () {
