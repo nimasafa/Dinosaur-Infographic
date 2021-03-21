@@ -173,6 +173,19 @@ function getRandomIntInclusive(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min); //The maximum is inclusive and the minimum is inclusive
   }
 
+// Randomize array in-place using Durstenfeld shuffle algorithm -- to be used on dino array
+// Keep 4th item in array in place for human placeholder
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        if (i != 4) {
+            let j = Math.floor(Math.random() * (i + 1));
+            let temp = array[i];
+            array[i] = array[j];
+            array[j] = temp;
+        }
+    }
+}
+
 // Generate Tiles for each Dino in Array
 function generateDinoTile(dinoData, humanData) {
     // Select fact about dino to display
@@ -248,6 +261,7 @@ function displayGraphic(dinoData, humanData) {
     document.addEventListener('DOMContentLoaded', function () {
         button.addEventListener('click', function(e) {
             const dinoArray = dinoObjectBuilder();
+            shuffleArray(dinoArray);
             displayGraphic(dinoArray, human);
         })
     })
