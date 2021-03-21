@@ -162,6 +162,13 @@ Dino.prototype.compareDiet = function (humanDiet) {
     }
 }
 
+// Generate random integer between two values, inclusive
+function getRandomIntInclusive(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1) + min); //The maximum is inclusive and the minimum is inclusive
+  }
+
 // Generate Tiles for each Dino in Array
   
     // Add tiles to DOM
