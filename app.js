@@ -97,11 +97,20 @@ function dinoObjectBuilder() {
     dinos.forEach(function(dino) {
         dinoObjects.push(new Dino(dino_data));
     });
-    
+
     return dinoObjects;
 }
 
     // Create Human Object
+const human = new Object();
+    
+    // Function to get Human Data from Form
+function getHumanData() {
+    human.name = document.getElementByID('name').value;
+    human.height = document.getElementById('feet').value * 12 + document.getElementByID('inches').value;
+    human.weight = document.getElementByID('weight').value;
+    human.diet = document.getElementByID('diet').value;
+} 
 
     // Use IIFE to get human data from form
 
