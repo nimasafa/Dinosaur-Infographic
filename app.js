@@ -173,7 +173,7 @@ function getRandomIntInclusive(min, max) {
   }
 
 // Generate Tiles for each Dino in Array
-function generateTile(dinoData, humanData) {
+function generateDinoTile(dinoData, humanData) {
     // Select fact about dino to display
     // Pigeon should alway display the same fact as a constant
     let dinoFact = "";
@@ -206,6 +206,15 @@ function generateTile(dinoData, humanData) {
     const newTile = document.createElement('div');
     newTile.className = 'grid-item';
     newTile.innerHTML = `<h3>${dinoData.species}</h3><img src="images/${(dinoData.species.toLowerCase())}.png" alt="image of ${dinoData.species}"><p>${dinoFact}</p>`;
+    return newTile;
+}
+
+// Add tile for Human to DOM
+function generateHumanTile(humanData) {
+    const newTile = document.createElement('div');
+    newTile.className = 'grid-item';
+    newTile.innerHTML = `<h3>${humanData.name}</h3><img src="images/human.png" alt="image of human">`;
+
     return newTile;
 }
 
