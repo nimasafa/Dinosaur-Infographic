@@ -105,23 +105,18 @@ function dinoObjectBuilder() {
     return dinoObjects;
 }
 
-// Use IIFE to get human data from form
-// Wrap event listeners within IIFE to grab data when submitted
-const human = (function getHumanData() {
+// Get human data from form
+function getHumanData() {
     const humanData = {};
-    const button = document.getElementById('btn');
 
-    document.addEventListener('DOMContentLoaded', function () {
-        button.addEventListener('click', function(e) {
-            humanData.name = document.getElementById('name').value;
-            humanData.height = document.getElementById('feet').value * 12 + document.getElementById('inches').value;
-            humanData.weight = document.getElementById('weight').value;
-            humanData.diet = document.getElementById('diet').value;
-            humanData.diet = humanData.diet.toLowerCase();
-        })
-    })
+    humanData.name = document.getElementById('name').value;
+    humanData.height = document.getElementById('feet').value * 12 + document.getElementById('inches').value;
+    humanData.weight = document.getElementById('weight').value;
+    humanData.diet = document.getElementById('diet').value;
+    humanData.diet = humanData.diet.toLowerCase();
+
     return humanData;
-})();
+}
 
 // Function to format numbers with thousands separators
 function formatNumber(num) {
@@ -260,6 +255,7 @@ function displayGraphic(dinoData, humanData) {
 
     document.addEventListener('DOMContentLoaded', function () {
         button.addEventListener('click', function(e) {
+            const human = getHumanData();
             const dinoArray = dinoObjectBuilder();
             shuffleArray(dinoArray);
             displayGraphic(dinoArray, human);
