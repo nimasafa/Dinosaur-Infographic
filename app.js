@@ -105,11 +105,12 @@ function dinoObjectBuilder() {
     // Wrap event listeners within IIFE to grab data when submitted
 const human = (function getHumanData() {
     const humanData = {};
+    const button = document.getElementById('btn');
 
     document.addEventListener('DOMContentLoaded', function () {
-        document.getElementById('btn').addEventListener('click', function(e) {
+        button.addEventListener('click', function(e) {
             humanData.name = document.getElementById('name').value;
-            humanData.height = document.getElementById('feet').value * 12 + document.getElementByID('inches').value;
+            humanData.height = document.getElementById('feet').value * 12 + document.getElementById('inches').value;
             humanData.weight = document.getElementById('weight').value;
             humanData.diet = document.getElementById('diet').value;
         })
