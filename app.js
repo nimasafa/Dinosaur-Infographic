@@ -172,12 +172,12 @@ function getRandomIntInclusive(min, max) {
 // Keep 4th item in array in place for human placeholder
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
-        if (i != 4) {
             let j = Math.floor(Math.random() * (i + 1));
-            let temp = array[i];
-            array[i] = array[j];
-            array[j] = temp;
-        }
+            if (i != 4 && j != 4) {
+                let temp = array[i];
+                array[i] = array[j];
+                array[j] = temp;
+            }
     }
 }
 
