@@ -118,10 +118,22 @@ const human = (function getHumanData() {
     return humanData;
 })();
 
+// Function to format numbers with thousands separators
+function formatNumber(num) {
+    return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
+}
 
-// Create Dino Compare Method 1
-// NOTE: Weight in JSON file is in lbs, height in inches. 
-
+// Create method within Dino prototype to compare weight of Dino and human
+// NOTE: Weight is in lbs 
+Dino.prototype.compareWeight = function (humanWeight) {
+    if (this.weight > humanWeight) {
+        return `The ${this.species} weighs ${formatNumber((this.weight - humanWeight).toFixed(0))} lbs more than you!`;
+    } else if (this.weight < humanWeight) {
+        return `You weigh ${formatNumber((humanWeight - this.weight).toFixed(0))} lbs more than the ${this.species}`;
+    } else {
+        return `You weigh the same as the ${this.species}`;
+    }
+}
     
 // Create Dino Compare Method 2
 // NOTE: Weight in JSON file is in lbs, height in inches.
