@@ -135,9 +135,19 @@ Dino.prototype.compareWeight = function (humanWeight) {
     }
 }
     
-// Create Dino Compare Method 2
-// NOTE: Weight in JSON file is in lbs, height in inches.
+// Create method within Dino prototype to compare height of Dino and human
+// NOTE: Height is in inches.
+Dino.prototype.compareHeight = function (humanHeight) {
+    const heightFactor = (this.height / humanHeight).toFixed(1);
 
+    if (heightFactor > 1) {
+        return `The ${this.species} is ${formatNumber(heightFactor)}x taller than you!`;
+    } else if (heightFactor < 1) {
+        return `You are ${formatNumber(1 / heightFactor)}x taller than the ${this.species}`;
+    } else {
+        return `You are the same height as ${this.species}`;
+    }
+}
     
 // Create Dino Compare Method 3
 // NOTE: Weight in JSON file is in lbs, height in inches.
