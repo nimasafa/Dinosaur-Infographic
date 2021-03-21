@@ -33,7 +33,7 @@ function dinoData() {
         {
             "species": "Brachiosaurus",
             "weight": 70000,
-            "height": "372",
+            "height": 372,
             "diet": "herbavor",
             "where": "North America",
             "when": "Late Jurasic",
