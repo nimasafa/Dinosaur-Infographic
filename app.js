@@ -105,9 +105,6 @@ function dinoObjectBuilder() {
     return dinoObjects;
 }
 
-// ?? Should dinoArray and human be moved inside a function in refactoring?
-const dinoArray = dinoObjectBuilder();
-
 // Use IIFE to get human data from form
 // Wrap event listeners within IIFE to grab data when submitted
 const human = (function getHumanData() {
@@ -227,7 +224,7 @@ function removeForm() {
     document.querySelector('form').style.display = 'none';
 }
 
-// On button click, prepare and display infographic
+// Prepare and display infographic
 function displayGraphic(dinoData, humanData) {
     removeForm();
     
@@ -237,10 +234,21 @@ function displayGraphic(dinoData, humanData) {
     //Cycle through dino and human objects to generate tiles
     for (let i=0; i<9; i++) {
         let tile = i === 4 ? generateHumanTile(humanData) : generateDinoTile(dinoData[i], humanData);
-
         fragment.appendChild(tile);
     }
 
     //Append fragment with tiles to grid on the DOM
     grid.appendChild(fragment);
 }
+
+// IIFE that displays infographic with comparisons on button click
+(function main(){
+    const button = document.getElementById('btn');
+
+    document.addEventListener('DOMContentLoaded', function () {
+        button.addEventListener('click', function(e) {
+            const dinoArray = dinoObjectBuilder();
+            displayGraphic(dinoArray, human);
+        })
+    })
+})();
