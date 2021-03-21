@@ -232,21 +232,39 @@ function removeForm() {
     document.querySelector('form').style.display = 'none';
 }
 
+// Validate the form data to ensure the data is acceptable and complete
+function errorMessage(humanData) {
+    if (humanData.name === "") {
+        window.alert('Please enter a valid name.');
+        return false;
+    } else if (humanData.height < 1) {
+        window.alert('Please enter a valid height.');
+        return false;
+    } else if (humanData.weight < 1) {
+        window.alert('Please enter a valid weight.');
+        return false;
+    } else {
+        return true;
+    }
+}
+
 // Prepare and display infographic
 function displayGraphic(dinoData, humanData) {
-    removeForm();
-    
-    const grid = document.getElementById('grid');
-    let fragment = new DocumentFragment();
+    if (errorMessage(humanData) === true) {
+        removeForm();
 
-    //Cycle through dino and human objects to generate tiles
-    for (let i=0; i<9; i++) {
-        let tile = i === 4 ? generateHumanTile(humanData) : generateDinoTile(dinoData[i], humanData);
-        fragment.appendChild(tile);
-    }
+        const grid = document.getElementById('grid');
+        let fragment = new DocumentFragment();
+        
+        //Cycle through dino and human objects to generate tiles
+        for (let i=0; i<9; i++) {
+            let tile = i === 4 ? generateHumanTile(humanData) : generateDinoTile(dinoData[i], humanData);
+            fragment.appendChild(tile);
+        }
 
-    //Append fragment with tiles to grid on the DOM
-    grid.appendChild(fragment);
+        //Append fragment with tiles to grid on the DOM
+        grid.appendChild(fragment);
+    }  
 }
 
 // IIFE that displays infographic with comparisons on button click
