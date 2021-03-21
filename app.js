@@ -110,8 +110,8 @@ function getHumanData() {
     const humanData = {};
 
     humanData.name = document.getElementById('name').value;
-    humanData.height = document.getElementById('feet').value * 12 + document.getElementById('inches').value;
-    humanData.weight = document.getElementById('weight').value;
+    humanData.height = Number(document.getElementById('feet').value) * 12 + Number(document.getElementById('inches').value);
+    humanData.weight = Number(document.getElementById('weight').value);
     humanData.diet = document.getElementById('diet').value;
     humanData.diet = humanData.diet.toLowerCase();
 
