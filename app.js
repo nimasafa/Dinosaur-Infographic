@@ -185,13 +185,13 @@ function generateDinoTile(dinoData, humanData) {
 
     switch(randomInt) {
         case 0:
-            dinoFact = dinoData.compareWeight();
+            dinoFact = dinoData.compareWeight(humanData.weight);
             break;
         case 1:
-            dinoFact = dinoData.compareHeight();
+            dinoFact = dinoData.compareHeight(humanData.Height);
             break;
         case 2:
-            dinoFact = dinoData.compareDiet();
+            dinoFact = dinoData.compareDiet(humanData.diet);
             break;
         case 3:
             dinoFact = `The ${dinoData.species} lived in ${dinoData.where}.`;
