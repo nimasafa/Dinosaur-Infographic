@@ -90,7 +90,16 @@ function Dino (dino_data) {
     this.fact = dino_data.fact;
 }
     // Create Dino Objects
+function dinoObjectBuilder() {
+    const dinos = dinoData();
+    const dinoObjects = [];
 
+    dinos.forEach(function(dino) {
+        dinoObjects.push(new Dino(dino_data));
+    });
+    
+    return dinoObjects;
+}
 
     // Create Human Object
 
