@@ -272,11 +272,11 @@ function displayGraphic(dinoData, humanData) {
     const button = document.getElementById('btn');
 
     document.addEventListener('DOMContentLoaded', function () {
-        button.addEventListener('click', function(e) {
-            const human = getHumanData();
-            const dinoArray = dinoObjectBuilder();
-            shuffleArray(dinoArray);
-            displayGraphic(dinoArray, human);
-        })
+        button.addEventListener('click', function () {
+                const human = getHumanData();
+                const dinoArray = dinoObjectBuilder();
+                shuffleArray(dinoArray);
+                displayGraphic(dinoArray, human);
+            })
     })
 })();
