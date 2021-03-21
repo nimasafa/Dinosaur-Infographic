@@ -237,7 +237,7 @@ function displayGraphic(dinoData, humanData) {
     //Cycle through dino and human objects to generate tiles
     //?? Does human placeholder create a problem in function of generateDinoTile??
     for (let i=0; i<9; i++) {
-        let tile = i === 4 ? generateHumanTile(humanData) : generateDinoTile(dinoData);
+        let tile = i === 4 ? generateHumanTile(humanData) : generateDinoTile(dinoData, humanData);
 
         fragment.appendChild(tile);
     }
