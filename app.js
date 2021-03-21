@@ -141,9 +141,9 @@ Dino.prototype.compareHeight = function (humanHeight) {
     const heightFactor = (this.height / humanHeight).toFixed(1);
 
     if (heightFactor > 1) {
-        return `The ${this.species} is ${formatNumber(heightFactor)}x taller than you!`;
+        return `The ${this.species} is ${(heightFactor)}x taller than you!`;
     } else if (heightFactor < 1) {
-        return `You are ${formatNumber(1 / heightFactor)}x taller than the ${this.species}`;
+        return `You are ${(1 / heightFactor).toFixed(1)}x taller than the ${this.species}`;
     } else {
         return `You are the same height as ${this.species}`;
     }
