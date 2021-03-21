@@ -176,7 +176,7 @@ function getRandomIntInclusive(min, max) {
 function generateTile(dinoData, humanData) {
     // Select fact about dino to display
     // Pigeon should alway display the same fact as a constant
-    const dinoFact = "";
+    let dinoFact = "";
     const randomInt = dinoData.species === "Pigeon" ? 5 : getRandomIntInclusive(0, 5);
 
     switch(randomInt) {
