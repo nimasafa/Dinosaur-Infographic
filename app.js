@@ -98,6 +98,10 @@ function dinoObjectBuilder() {
         dinoObjects.push(new Dino(dino));
     });
 
+    //Mark a placeholder at midpoint of dinoObjects array for human
+    //Ensures placement of human tile at center of infographic
+    dinoObjects.splice(4, 0, 'human');
+
     return dinoObjects;
 }
 
