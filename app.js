@@ -228,3 +228,20 @@ function removeForm() {
 }
 
 // On button click, prepare and display infographic
+function displayGraphic(dinoData, humanData) {
+    removeForm();
+    
+    const grid = document.getElementById('grid');
+    let fragment = new DocumentFragment();
+
+    //Cycle through dino and human objects to generate tiles
+    //?? Does human placeholder create a problem in function of generateDinoTile??
+    for (let i=0; i<9; i++) {
+        let tile = i === 4 ? generateHumanTile(humanData) : generateDinoTile(dinoData);
+
+        fragment.appendChild(tile);
+    }
+
+    //Append fragment with tiles to grid on the DOM
+    grid.appendChild(fragment);
+}
