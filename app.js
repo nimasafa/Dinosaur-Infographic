@@ -101,6 +101,9 @@ function dinoObjectBuilder() {
     return dinoObjects;
 }
 
+// ?? Should dinoArray and human be moved inside a function in refactoring?
+const dinoArray = dinoObjectBuilder();
+
 // Use IIFE to get human data from form
 // Wrap event listeners within IIFE to grab data when submitted
 const human = (function getHumanData() {
