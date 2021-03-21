@@ -113,6 +113,7 @@ const human = (function getHumanData() {
             humanData.height = document.getElementById('feet').value * 12 + document.getElementById('inches').value;
             humanData.weight = document.getElementById('weight').value;
             humanData.diet = document.getElementById('diet').value;
+            humanData.diet = humanData.diet.toLowerCase();
         })
     })
     return humanData;
