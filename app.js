@@ -79,7 +79,7 @@ function dinoData() {
     return dinos;
 }
 
-    // Create Dino Constructor
+// Create Dino Constructor
 function Dino (dino_data) {
     this.species = dino_data.species;
     this.weight = dino_data.weight;
@@ -89,7 +89,7 @@ function Dino (dino_data) {
     this.when = dino_data.when;
     this.fact = dino_data.fact;
 }
-    // Create Dino Objects
+// Create Dino Objects
 function dinoObjectBuilder() {
     const dinos = dinoData();
     const dinoObjects = [];
@@ -101,8 +101,8 @@ function dinoObjectBuilder() {
     return dinoObjects;
 }
 
-    // Use IIFE to get human data from form
-    // Wrap event listeners within IIFE to grab data when submitted
+// Use IIFE to get human data from form
+// Wrap event listeners within IIFE to grab data when submitted
 const human = (function getHumanData() {
     const humanData = {};
     const button = document.getElementById('btn');
@@ -119,23 +119,23 @@ const human = (function getHumanData() {
 })();
 
 
-    // Create Dino Compare Method 1
-    // NOTE: Weight in JSON file is in lbs, height in inches. 
+// Create Dino Compare Method 1
+// NOTE: Weight in JSON file is in lbs, height in inches. 
 
     
-    // Create Dino Compare Method 2
-    // NOTE: Weight in JSON file is in lbs, height in inches.
+// Create Dino Compare Method 2
+// NOTE: Weight in JSON file is in lbs, height in inches.
 
     
-    // Create Dino Compare Method 3
-    // NOTE: Weight in JSON file is in lbs, height in inches.
+// Create Dino Compare Method 3
+// NOTE: Weight in JSON file is in lbs, height in inches.
 
 
-    // Generate Tiles for each Dino in Array
+// Generate Tiles for each Dino in Array
   
-        // Add tiles to DOM
+    // Add tiles to DOM
 
-    // Remove form from screen
+// Remove form from screen
 
 
 // On button click, prepare and display infographic
