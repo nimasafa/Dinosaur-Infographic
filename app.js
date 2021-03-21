@@ -193,7 +193,7 @@ function generateDinoTile(dinoData, humanData) {
             dinoFact = dinoData.compareWeight(humanData.weight);
             break;
         case 1:
-            dinoFact = dinoData.compareHeight(humanData.Height);
+            dinoFact = dinoData.compareHeight(humanData.height);
             break;
         case 2:
             dinoFact = dinoData.compareDiet(humanData.diet);
