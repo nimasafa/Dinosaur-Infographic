@@ -101,18 +101,21 @@ function dinoObjectBuilder() {
     return dinoObjects;
 }
 
-    // Create Human Object
-const human = new Object();
-    
-    // Function to get Human Data from Form
-function getHumanData() {
-    human.name = document.getElementByID('name').value;
-    human.height = document.getElementById('feet').value * 12 + document.getElementByID('inches').value;
-    human.weight = document.getElementByID('weight').value;
-    human.diet = document.getElementByID('diet').value;
-} 
-
     // Use IIFE to get human data from form
+    // Wrap event listeners within IIFE to grab data when submitted
+const human = (function getHumanData() {
+    const humanData = {};
+
+    document.addEventListener('DOMContentLoaded', function () {
+        document.getElementById('btn').addEventListener('click', function(e) {
+            humanData.name = document.getElementById('name').value;
+            humanData.height = document.getElementById('feet').value * 12 + document.getElementByID('inches').value;
+            humanData.weight = document.getElementById('weight').value;
+            humanData.diet = document.getElementById('diet').value;
+        })
+    })
+    return humanData;
+})();
 
 
     // Create Dino Compare Method 1
