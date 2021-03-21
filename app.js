@@ -150,7 +150,7 @@ Dino.prototype.compareHeight = function (humanHeight) {
     }
 }
     
-// Create method inn Dino prototype to compare diets of Dino and human
+// Create method in Dino prototype to compare diets of Dino and human
 Dino.prototype.compareDiet = function (humanDiet) {
     const article1 = this.diet === 'omnivore' ? 'an' : 'a';
     const article2 = humanDiet === 'omnivore' ? 'an' : 'a';
