@@ -219,6 +219,8 @@ function generateHumanTile(humanData) {
 }
 
 // Remove form from screen
-
+function removeForm() {
+    document.querySelector('form').style.display = 'none';
+}
 
 // On button click, prepare and display infographic
