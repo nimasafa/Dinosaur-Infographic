@@ -95,7 +95,7 @@ function dinoObjectBuilder() {
     const dinoObjects = [];
 
     dinos.forEach(function(dino) {
-        dinoObjects.push(new Dino(dino_data));
+        dinoObjects.push(new Dino(dino));
     });
 
     return dinoObjects;
