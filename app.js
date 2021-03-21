@@ -173,6 +173,35 @@ function getRandomIntInclusive(min, max) {
   }
 
 // Generate Tiles for each Dino in Array
+function generateTile(dinoData, humanData) {
+    // Select fact about dino to display
+    // Pigeon should alway display the same fact as a constant
+    const dinoFact = "";
+    const randomInt = dinoData.species === "Pigeon" ? 5 : getRandomIntInclusive(0, 5);
+
+    switch(randomInt) {
+        case 0:
+            dinoFact = dinoData.compareWeight();
+            break;
+        case 1:
+            dinoFact = dinoData.compareHeight();
+            break;
+        case 2:
+            dinoFact = dinoData.compareDiet();
+            break;
+        case 3:
+            dinoFact = `The ${dinoData.species} lived in ${dinoData.where}.`;
+            break;
+        case 4:
+            dinoFact = `The ${dinoData.species} lived in the ${dinoData.when} period.`
+            break;
+        case 5:
+            dinoFact = dinoData.fact;
+            break;
+        default:
+            dinoFact = "Dinosaurs dominated the world!";
+    }
+}
   
     // Add tiles to DOM
 
