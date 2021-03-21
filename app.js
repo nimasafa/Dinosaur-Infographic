@@ -80,7 +80,15 @@ function dinoData() {
 }
 
     // Create Dino Constructor
-
+function Dino (dino_data) {
+    this.species = dino_data.species;
+    this.weight = dino_data.weight;
+    this.height = dino_data.height;
+    this.diet = dino_data.diet;
+    this.where = dino_data.where;
+    this.when = dino_data.when;
+    this.fact = dino_data.fact;
+}
     // Create Dino Objects
 
 
